@@ -1,7 +1,7 @@
 
   const shareData = {
       title: 'Drake Doppelganger',
-      text: 'Share like a pro from your web application',
+      text: '💡Share like a pro from your web application',
       url: 'https://kvkirthy.github.io/web-share-sample'
     }
   
