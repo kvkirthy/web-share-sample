@@ -1,5 +1,4 @@
-
-  const shareData = {
+   const shareData = {
       title: 'Drake Doppelganger',
       text: '💡Share like a pro from your web application',
       url: 'https://kvkirthy.github.io/web-share-sample'
@@ -10,8 +9,14 @@
     // Share must be triggered by "user activation"
     btn.addEventListener('click', async () => {
       try {
-        let result = await navigator.share(shareData);
-        document.getElementById("status").innerText = result || '';
+        if(navigator.canShare 
+            && typeof navigator.canShare === 'function' 
+            && navigator.canShare(data)){
+          let result = await navigator.share(shareData);
+          document.getElementById("status").innerText = result || '';
+        } else {
+          document.getElementById("status").innerText = "Sharing selected data not supported.";
+        }
       } catch(err) {
         document.getElementById("status").innerText = "Share not complete";
       }
